@@ -1,175 +1,377 @@
 @charset "utf-8";
 
 /* reset */
-* {margin: 0;padding: 0;}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
-h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
-a {color: inherit; text-decoration: inherit;}
-img {vertical-align: middle;}
-a img {border: none;}
-li {list-style: none;}
-address, em, i {font-style: normal;}
-a:focus {outline: none}
-button:focus {outline: none}
-span:focus{outline: none;}
-i {cursor: pointer;}
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+img {
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+li {
+  list-style: none;
+}
+address,
+em,
+i {
+  font-style: normal;
+}
+a:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+span:focus {
+  outline: none;
+}
+i {
+  cursor: pointer;
+}
 
-body{font-size: 16px; line-height: 1.6; background: #fff;}
-.wrap{width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fff;
+}
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
 
 .container {
-    position: relative;
-    display: flex;
-    height: 100vh;
-  }
-  
-  .sidebar {
-    width: 276px;
-    background-color: #f6f6f6;
-    color : #7e7e7e;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .sidebar-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-  }
-  
-  .user-img {
-    width: 24px;
-    height: 24px;
-    object-fit: cover;
-  }
-  
-  .sidebar nav ul {
-    list-style: none;
-  }
-  
-  .sidebar nav ul li {
-    cursor: pointer;
-    padding: 5.5px;
-  }
-  
-  .sidebar footer {
-    margin-top: auto;
-    height: 8vh;
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
 
-  footer i{
-    margin-right: 2vw;
-  }
-  
-  .sidebar-contents {
-    height: 30vh;
-    padding: 2rem;
-  }
-  
-  .sidebar-contents h3 {
-    font-size: 12px;
-    font-weight: bold;
-    color: #9f9f9d;
-  }
-  
-  .page-list,
-  .todo-list{
-    height: 100%;
-    overflow-y: scroll;
-  }
+.sidebar {
+  width: 276px;
+  background-color: #f6f6f6;
+  color: #7e7e7e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .page-list li,
-  .todo-list li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 4px;
-    cursor: pointer;
-    border-radius: 10px;
-  }
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+}
 
-  .page-list li:hover,
-  .todo-list li:hover{
-    background-color: #eee;
-    transition: 0.2s ease-in;
-  }
+.user-img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
 
-  .deleteTodoBtn{
-    position: absolute;
-    right: 0;
-    display: none;
-    margin-left: 10px;
-    transition: 0.3s ease-in;
-  }
-  
-  .todoList-item:hover .deleteTodoBtn{
-    display: inline!important;
-  } 
+.sidebar nav ul {
+  list-style: none;
+}
 
-  .page-list li i,
-  .todo-list li i{
-    margin-left: 8px;
-    margin-right: 8px;
-    font-size: 1rem
-  }
+.sidebar nav ul li {
+  cursor: pointer;
+  padding: 5.5px;
+}
 
-  .todoList-header {
-    font-size: 12px;
-    font-weight: bold;
-    color: #9f9f9d;
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: space-between;
-  }
+.sidebar footer {
+  margin-top: auto;
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
 
-  .todoList-header i{
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: auto;
-    border-radius: 5px;
-  }
+footer i {
+  margin-right: 2vw;
+}
 
-  .todoList-header i:hover{
-    background-color: #eee;
-    transition: 0.2s ease-in;
-  }
+.sidebar-contents {
+  height: 30vh;
+  padding: 2rem;
+}
 
+.sidebar-contents h3 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9f9f9d;
+}
 
-  .editor {
-    flex: 1;
-    padding: 200px;
-    color: #908f8d;
-    font-size: 14px;
-  }
-  
-  .page-title {
-    font-size: 48px;
-    margin-bottom: 28px;
-    color: #dcdcdc;
-  }
-  
-  #editor {
-    border: none;
-    outline: none;
-  }
+.page-list,
+.todo-list {
+  height: 100%;
+  overflow-y: scroll;
+}
 
-  .logo-wrapper{
-    position: absolute;
-    bottom: 4%;
-    right: 4%;
-    width: 50px;
-  }
+.page-list li,
+.todo-list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 10px;
+}
 
-  .logo-wrapper img{
-    width: 100%;
-  }
+.page-list li:hover,
+.todo-list li:hover {
+  background-color: #eee;
+  transition: 0.2s ease-in;
+}
+
+.deleteTodoBtn {
+  position: absolute;
+  right: 0;
+  display: none;
+  margin-left: 10px;
+  transition: 0.3s ease-in;
+}
+
+.todoList-item:hover .deleteTodoBtn {
+  display: inline !important;
+}
+
+.page-list li i,
+.todo-list li i {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+.todoList-header {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9f9f9d;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoList-header i {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  border-radius: 5px;
+}
+
+.todoList-header i:hover {
+  background-color: #eee;
+  transition: 0.2s ease-in;
+}
+
+.editor {
+  flex: 1;
+  padding: 200px;
+  color: #908f8d;
+  font-size: 14px;
+}
+
+.page-title {
+  font-size: 48px;
+  margin-bottom: 28px;
+  color: #dcdcdc;
+}
+
+/*editor styling*/
+
+.editor {
+  flex: 1;
+  padding: 200px;
+  color: #908f8d;
+  font-size: 14px;
+}
+
+.pageTitle {
+  font-size: 48px;
+  margin-bottom: 28px;
+}
+
+.pageTitle:focus {
+  outline: none;
+  color: #2a2923;
+}
+
+#editor {
+  border: none;
+  outline: none;
+}
+
+.logo-wrapper {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  width: 50px;
+}
+
+.logo-wrapper img {
+  width: 100%;
+}
+
+/* 리스트들 */
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  cursor: pointer;
+  padding: 5.5px;
+}
+
+.sidebar footer {
+  margin-top: auto;
+}
+
+.sidebarContents {
+  margin: 20px 3px;
+}
+
+.sidebarContents h3 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9f9f9d;
+}
+
+.pageList li,
+.todoList li {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #7a7669;
+}
+
+.pageItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.docIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* User Info */
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+}
+
+.userImg {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.sidebarHeader h2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.imgButton {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: block;
+  transition: opacity 0.1s;
+}
+
+.imgButton :hover {
+  opacity: 0.9;
+}
