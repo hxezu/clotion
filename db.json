@@ -13,6 +13,7 @@
   ],
   "todos": [
     {
+<<<<<<< HEAD
       "todo": "djssyd",
       "completed": false,
       "id": "0cfc"
@@ -23,11 +24,14 @@
       "id": "8a6e"
     },
     {
+=======
+>>>>>>> feat/todo-list
       "todo": "apd",
       "completed": true,
       "id": "2dbc"
     },
     {
+<<<<<<< HEAD
       "id": "5721",
       "todo": "",
       "completed": false
@@ -46,6 +50,16 @@
       "id": "b6ae",
       "todo": "",
       "completed": false
+=======
+      "todo": "New Todo",
+      "completed": false,
+      "id": "bb5a"
+    },
+    {
+      "todo": "New Todo",
+      "completed": false,
+      "id": "b6ae"
+>>>>>>> feat/todo-list
     },
     {
       "id": "0470",
