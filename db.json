@@ -13,39 +13,19 @@
   ],
   "todos": [
     {
-      "todo": "djssyd",
-      "completed": false,
-      "id": "0cfc"
-    },
-    {
-      "todo": "Hi",
-      "completed": true,
-      "id": "8a6e"
-    },
-    {
       "todo": "apd",
       "completed": true,
       "id": "2dbc"
     },
     {
-      "id": "5721",
-      "todo": "",
-      "completed": false
+      "todo": "New Todo",
+      "completed": false,
+      "id": "bb5a"
     },
     {
-      "id": "bb5a",
-      "todo": "",
-      "completed": false
-    },
-    {
-      "id": "66ed",
-      "todo": "",
-      "completed": false
-    },
-    {
-      "id": "b6ae",
-      "todo": "",
-      "completed": false
+      "todo": "New Todo",
+      "completed": false,
+      "id": "b6ae"
     },
     {
       "id": "0470",

@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = document.createElement("li");
       const i = document.createElement("i");
       const span = document.createElement("span");
+      const deleteBtn = document.createElement("i");
   
       li.className = "todoList-item";
       i.className = data.completed
@@ -40,6 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
       span.className = "todo-text";
       span.textContent = data.todo || "New Todo";
       span.contentEditable = "true";
+
+      deleteBtn.className = "fa-regular fa-trash-can deleteTodoBtn";
+      deleteBtn.style.display = "none";
+
+      if (data.completed) {
+        span.style.textDecoration = "line-through";
+        span.style.color = "#aaa"; 
+    }
   
       i.addEventListener("click", () => {
         toggleTodo(data.id, !data.completed, i, span);
@@ -55,9 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
       span.addEventListener("blur", () => {
         updateTodoText(data.id, span.textContent);
       });
+
+      deleteBtn.addEventListener('click',()=>{
+        deleteTodo(data.id, li)
+      })
   
       li.appendChild(i);
       li.appendChild(span);
+      li.appendChild(deleteBtn);
       todoList.appendChild(li);
     };
 
@@ -97,5 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
     };
+
+    //Todo 삭제 (Delete)
+    const deleteTodo = (id, li) =>{
+      fetch(`http://localhost:3000/todos/${id}`,{
+        method : 'DELETE',
+        headers : {"Content-type": "application/json; charset=UTF-8"}
+      })
+      .then(() =>{li.remove()})
+      .catch(err => console.error('Error Occurs'))
+    }
 
 })

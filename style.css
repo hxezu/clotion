@@ -14,17 +14,19 @@ button:focus {outline: none}
 span:focus{outline: none;}
 i {cursor: pointer;}
 
-body{font-size: 16px; line-height: 1.6; background: #f8f8f4;}
+body{font-size: 16px; line-height: 1.6; background: #fff;}
 .wrap{width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
 
 .container {
+    position: relative;
     display: flex;
     height: 100vh;
   }
   
   .sidebar {
     width: 276px;
-    background-color: #f8f8f7;
+    background-color: #f6f6f6;
+    color : #7e7e7e;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,6 +56,15 @@ body{font-size: 16px; line-height: 1.6; background: #f8f8f4;}
   
   .sidebar footer {
     margin-top: auto;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  footer i{
+    margin-right: 2vw;
   }
   
   .sidebar-contents {
@@ -70,11 +81,12 @@ body{font-size: 16px; line-height: 1.6; background: #f8f8f4;}
   .page-list,
   .todo-list{
     height: 100%;
-    overflow: scroll;
-  }  
+    overflow-y: scroll;
+  }
 
   .page-list li,
   .todo-list li {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 4px;
@@ -84,13 +96,26 @@ body{font-size: 16px; line-height: 1.6; background: #f8f8f4;}
 
   .page-list li:hover,
   .todo-list li:hover{
-    background-color: #cbcbcb;
-    color: black;
+    background-color: #eee;
+    transition: 0.2s ease-in;
   }
+
+  .deleteTodoBtn{
+    position: absolute;
+    right: 0;
+    display: none;
+    margin-left: 10px;
+    transition: 0.3s ease-in;
+  }
+  
+  .todoList-item:hover .deleteTodoBtn{
+    display: inline!important;
+  } 
 
   .page-list li i,
   .todo-list li i{
-    margin-right: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
     font-size: 1rem
   }
 
@@ -115,10 +140,11 @@ body{font-size: 16px; line-height: 1.6; background: #f8f8f4;}
   }
 
   .todoList-header i:hover{
-    background-color: #cbcbcb;
-    color: black;
+    background-color: #eee;
+    transition: 0.2s ease-in;
   }
-  
+
+
   .editor {
     flex: 1;
     padding: 200px;
@@ -135,4 +161,15 @@ body{font-size: 16px; line-height: 1.6; background: #f8f8f4;}
   #editor {
     border: none;
     outline: none;
+  }
+
+  .logo-wrapper{
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    width: 50px;
+  }
+
+  .logo-wrapper img{
+    width: 100%;
   }
