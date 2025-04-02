@@ -4,6 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clotion</title>
+    <link rel="stylesheet" href="style.css"
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <!--sidebar-->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <img src='assets/pic.svg' alt="user_img" class="user-img"/>
+          <h2>Clotion</h2>
+          <button>tmp</button>
+          <button>tmp</button>
+        </div>
+
+        <nav>
+          <div class="sidebar-contents" id="pageList-wrapper">
+            <h3>Private</h3>
+            <ul class="page-list">
+              <li>페이지1</li>
+              <li>페이지2</li>
+              <li>페이지3</li>
+              <li>페이지4</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-contents" id="todoList-wrapper">
+            <div class="todoList-header">
+              <span>Todo List</span>
+              <i class="fa-solid fa-plus" id="todoCreateButton"></i>
+            </div>
+            <ul class="todo-list"></ul>
+          </div>
+        </nav>
+
+        <footer>
+          <button>Setting</button>
+          <button>Trash</button>
+        </footer>
+      </aside>
+      <main class="editor">
+        <h1 class="page-title">New Page</h1>
+        <div id="editor" contenteditable="true">내용을 입력하세요...</div>
+      </main>
+    </div>
+
+    
+    <script src="https://kit.fontawesome.com/fb1f3be790.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

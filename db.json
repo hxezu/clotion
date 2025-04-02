@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": "4ce7",
+      "title": "",
+      "body": ""
+    },
+    {
+      "id": "6cfe",
+      "title": "",
+      "body": ""
+    }
+  ],
+  "todos": [
+    {
+      "todo": "djssyd",
+      "completed": false,
+      "id": "0cfc"
+    },
+    {
+      "todo": "Hi",
+      "completed": true,
+      "id": "8a6e"
+    },
+    {
+      "todo": "apd",
+      "completed": true,
+      "id": "2dbc"
+    },
+    {
+      "id": "5721",
+      "todo": "",
+      "completed": false
+    },
+    {
+      "id": "bb5a",
+      "todo": "",
+      "completed": false
+    },
+    {
+      "id": "66ed",
+      "todo": "",
+      "completed": false
+    },
+    {
+      "id": "b6ae",
+      "todo": "",
+      "completed": false
+    },
+    {
+      "id": "0470",
+      "todo": "",
+      "completed": false
+    }
+  ]
+}
