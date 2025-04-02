@@ -19,7 +19,7 @@
     },
     {
       "todo": "New Todo",
-      "completed": true,
+      "completed": false,
       "id": "b6ae"
     },
     {
@@ -48,14 +48,14 @@
       "id": "a667"
     },
     {
-      "id": "ce97",
       "todo": "",
-      "completed": false
+      "completed": true,
+      "id": "ce97"
     },
     {
-      "id": "d7a6",
       "todo": "",
-      "completed": false
+      "completed": true,
+      "id": "d7a6"
     },
     {
       "id": "562e",
@@ -203,14 +203,14 @@
       "completed": false
     },
     {
-      "id": "4b7b",
-      "todo": "",
-      "completed": false
+      "todo": "New Todo",
+      "completed": false,
+      "id": "4b7b"
     },
     {
-      "id": "56eb",
-      "todo": "",
-      "completed": false
+      "todo": "New Todo",
+      "completed": false,
+      "id": "56eb"
     },
     {
       "todo": "",
