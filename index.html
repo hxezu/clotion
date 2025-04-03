@@ -4,33 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clotion</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <!--sidebar-->
       <aside class="sidebar">
         <div class="sidebarHeader">
-          <img src='assets/userPic.svg' alt="user_img" class="userImg"/>
+          <img src="assets/userPic.svg" alt="user_img" class="userImg" />
           <h2>Clotion</h2>
           <button>tmp</button>
-          <img src="assets/addPage.svg" alt="add_page" id="addPageBtn" class="imgButton">
+          <img
+            src="assets/addPage.svg"
+            alt="add_page"
+            id="addPageBtn"
+            class="imgButton"
+          />
         </div>
 
         <nav>
-          <div class="sidebarContents">
+          <div class="sidebarContents" id="pageListWrapper">
             <h3>Private</h3>
             <ul class="pageList">
               <li>기본 페이지</li>
             </ul>
           </div>
 
-          <div class="sidebarContents" id="todoList-wrapper">
-            <div class="todoList-header">
+          <div class="sidebarContents" id="todoListWrapper">
+            <div class="todoListHeader">
               <span>Todo List</span>
               <i class="fa-solid fa-plus" id="todoCreateButton"></i>
             </div>
-            <ul class="todo-list"></ul>
+            <ul class="todoList"></ul>
           </div>
         </nav>
 
@@ -43,13 +48,15 @@
         <h1 class="pageTitle" contenteditable="true">New page</h1>
         <div id="editor" contenteditable="true">내용을 입력하세요...</div>
       </main>
-      <div class="logo-wrapper">
-        <img src="logo.png" alt="logo" >
+      <div class="logoWrapper">
+        <img src="logo.png" alt="logo" />
       </div>
     </div>
-
-    
-    <script src="https://kit.fontawesome.com/fb1f3be790.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/fb1f3be790.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="todo.js"></script>
+    <script src="page.js"></script>
   </body>
 </html>
