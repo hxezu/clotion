@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": "4ce7",
+      "title": "",
+      "body": ""
+    },
+    {
+      "id": "6cfe",
+      "title": "",
+      "body": ""
+    }
+  ],
+  "todos": [
+    {
+      "todo": "apd",
+      "completed": true,
+      "id": "2dbc"
+    },
+    {
+      "todo": "New Todo",
+      "completed": false,
+      "id": "bb5a"
+    },
+    {
+      "todo": "New Todo",
+      "completed": false,
+      "id": "b6ae"
+    },
+    {
+      "id": "0470",
+      "todo": "",
+      "completed": false
+    }
+  ]
+}
