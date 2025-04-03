@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clotion</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="favicon" href="./favicon.ico">
+    <link rel="favicon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>
     <div class="container">
       <!--sidebar-->
       <aside class="sidebar">
+        <div class="logoIcon">
+          <img src="assets/clotionLogo.svg" alt="Logo" class="clotionLogoImg">
+          <i class="fa-solid fa-angles-left" id="asideToggleBtn"></i>
+        </div>
         <div class="sidebarHeader">
           <img src="assets/userPic.svg" alt="user_img" class="userImg" />
           <h2>Clotion</h2>
@@ -26,9 +30,7 @@
         <nav>
           <div class="sidebarContents" id="pageListWrapper">
             <h3>Private</h3>
-            <ul class="pageList">
-              <li>기본 페이지</li>
-            </ul>
+            <ul class="pageList"></ul>
           </div>
 
           <div class="sidebarContents" id="todoListWrapper">
@@ -46,6 +48,7 @@
         </footer>
       </aside>
       <main class="editor">
+        <i class="fa-solid fa-bars" id="showSidebarBtn"></i>
         <h1 class="pageTitle" contenteditable="true">New page</h1>
         <div id="editor" contenteditable="true">내용을 입력하세요...</div>
       </main>
@@ -57,7 +60,8 @@
       src="https://kit.fontawesome.com/fb1f3be790.js"
       crossorigin="anonymous"
     ></script>
-    <script src="todo.js"></script>
-    <script src="page.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

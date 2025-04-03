@@ -139,6 +139,10 @@ i {
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .wrap {
   width: 100%;
   margin: 0 auto;
@@ -160,6 +164,11 @@ i {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .sidebarHeader {
@@ -167,6 +176,25 @@ i {
   align-items: center;
   gap: 12px;
   padding: 10px;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.logoIcon{
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logoIcon i{
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
 }
 
 .userImg {
@@ -306,6 +334,27 @@ footer i {
   padding: 200px;
   color: #908f8d;
   font-size: 14px;
+  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  margin-left: 276px;
+}
+
+.sidebar.hidden + .editor {
+  margin-left: 0;
+}
+
+#showSidebarBtn{
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.sidebar.hidden ~ .editor #showSidebarBtn {
+  display: flex; 
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .pageTitle {
@@ -317,6 +366,7 @@ footer i {
 .pageTitle:focus,
 #editor {
   outline: none;
+  position: relative;
 }
 
 /* Logo Styling */
