@@ -171,7 +171,13 @@ i {
   position: relative;
 }
 
-
+.logoIcon{
+  padding: 15px 25px;
+}
+.clotionLogoImg{
+  width: 24px;
+  height: 24px;
+}
 .sidebarHeaderLeft{
   display: flex;
   padding: 5px;
