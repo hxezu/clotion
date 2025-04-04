@@ -131,6 +131,7 @@ img {
   border: none;
 }
 
+input,
 button,
 a,
 span,
@@ -146,7 +147,7 @@ i {
 .wrap {
   width: 100%;
   margin: 0 auto;
-  overflow: hidden; 
+  overflow: hidden;
   position: relative;
 }
 
@@ -159,6 +160,8 @@ i {
 /* Sidebar Styling */
 .sidebar {
   width: 276px;
+  height: 100vh;
+  overflow: hidden;
   background-color: #f8f8f7;
   color: #7e7e7e;
   display: flex;
@@ -168,14 +171,27 @@ i {
   left: 0;
   top: 0;
   bottom: 0;
-  transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 .sidebarHeader {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  position: relative;
+  box-sizing: border-box;
+  height: 5%;
+}
+
+.sidebarHeader i {
+  position: absolute;
+  right: 0;
+  margin-right: 8px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .sidebar.hidden {
@@ -183,33 +199,35 @@ i {
   opacity: 0;
 }
 
-.logoIcon{
+.logoIcon {
   width: 100%;
-  padding: 0.5rem;
+  height: 5%;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
 }
 
-.clotionLogoImg{
+.clotionLogoImg {
   width: 24px;
   height: 24px;
 }
 
-.logoIcon i{
+.logoIcon i {
   display: flex;
   align-items: center;
-  margin-right: 8px;
+  margin-top: 0.8rem;
+  margin-right: 0.8rem;
 }
 
-
-.sidebarHeaderLeft{
+.sidebarHeaderLeft {
   display: flex;
   padding: 5px;
   gap: 10px;
+  position: relative;
 }
 
-.sidebarHeaderRight{
+.sidebarHeaderRight {
   display: flex;
   padding: 5px;
   gap: 10px;
@@ -221,8 +239,8 @@ i {
 }
 
 .userImg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
 }
 
@@ -232,8 +250,8 @@ i {
 }
 
 .imgButton {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   display: block;
   transition: opacity 0.1s;
@@ -254,17 +272,19 @@ i {
 }
 
 .sidebar nav ul li:hover {
-  background-color: #cbcbcb;
-  color: black;
+  background-color: #eee;
 }
 
 .sidebar footer {
+  position: absolute;
+  bottom: 0;
   margin-top: auto;
-  height: 8vh;
+  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
+  position: relative;
 }
 
 footer i {
@@ -273,8 +293,10 @@ footer i {
 
 /* Sidebar Contents */
 .sidebarContents {
-  height: 30vh;
-  padding: 2rem;
+  max-height: 45%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .todoListHeader {
@@ -311,16 +333,16 @@ footer i {
 
 .pageList,
 .todoList {
-  height: 100%;
+  height: 40vh;
   overflow: scroll;
 }
 
 .pageList li,
 .todoList li {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   position: relative;
-  padding: 4px;
+  padding: 2px;
   cursor: pointer;
   border-radius: 10px;
   color: #7a7669;
@@ -329,13 +351,26 @@ footer i {
 
 .pageList li:hover,
 .todoList li:hover {
-  background-color: #cbcbcb;
-  color: black;
+  background-color: #eee;
+}
+
+/*메뉴 버튼 */
+.pageList li .menuButton {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.pageList li:hover .menuButton {
+  opacity: 1;
 }
 
 .deleteTodoBtn {
   position: absolute;
   right: 0;
+  top: 25%;
   display: none;
   transition: 0.3s ease-in;
 }
@@ -350,32 +385,61 @@ footer i {
   margin-right: 8px;
   font-size: 1rem;
 }
+.pageList li{
+  display: block;
+}
 
 /* Editor Styling */
 .editor {
   flex: 1;
-  padding: 200px;
+  padding: 100px;
   color: #908f8d;
   font-size: 14px;
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  transition:
+    margin-left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
   margin-left: 276px;
+}
+
+.contentBlock {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  min-height: 20px;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.contentBlock:focus {
+  outline: none;
+  border-bottom: 2px solid #eeeeee;
 }
 
 .sidebar.hidden + .editor {
   margin-left: 0;
 }
 
-#showSidebarBtn{
+.contentBlock[draggable='true'] {
+  opacity: 0.7;
+  cursor: grabbing;
+}
+
+#showSidebarBtn {
   position: absolute;
   left: 5%;
   top: 5%;
-  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    opacity 0.2s ease-in-out;
   transform: translateX(-100%);
   opacity: 0;
 }
 
 .sidebar.hidden ~ .editor #showSidebarBtn {
-  display: flex; 
+  display: flex;
   transform: translateX(0);
   opacity: 1;
 }
@@ -392,6 +456,14 @@ footer i {
   position: relative;
 }
 
+.drag-handle {
+  cursor: grab;
+  padding-right: 8px;
+  font-size: 16px;
+  color: #666;
+  user-select: none;
+}
+
 /* Logo Styling */
 .logoWrapper {
   position: absolute;
@@ -402,4 +474,123 @@ footer i {
 
 .logoWrapper img {
   width: 100%;
+}
+
+/* setUserName popup style */
+.setUserNamePopup {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  gap: 10px;
+  position: absolute;
+  top: 2.5rem;
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.setUserNamePopup img {
+  width: 15px;
+  height: 15px;
+}
+
+.userNameInput {
+  display: none;
+  position: absolute;
+  left: 35px;
+  top: 9px;
+  width: 70%;
+}
+
+/* 인라인 편집 input 스타일 */
+.inlineInput {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background: white;
+}
+
+/* 컨텍스트 메뉴 */
+.contextMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 150px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 0.2px solid #ccc;
+  z-index: 10;
+  padding: 0.5rem;
+}
+
+.contextMenu ul {
+  padding: 0;
+}
+
+.contextMenu ul li {
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  color: rgb(98, 98, 98);
+}
+
+.contextMenu ul li:hover {
+  background: #f0f0f0;
+  color: #1e1e1e;
+}
+
+.contextMenu.hidden {
+  display: none;
+}
+
+.pageItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  position: relative;
+}
+
+.pageItem:hover {
+  background-color: #cbcbcb;
+  color: black;
+}
+
+.pageInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.docIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.menuButton {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.pageItem:hover .menuButton {
+  opacity: 1;
+}
+
+.pageItem:first-child .menuButton {
+  display: none;
 }
