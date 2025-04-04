@@ -15,7 +15,7 @@
 ## 📸 스크린샷  
 | 대시보드 | 편집 모드 |
 |---------|---------|
-| ![Slide 1](https://github.com/user-attachments/assets/f906e843-4a50-4701-aeba-e0541f6314a2) | ![Slide 2]([https://github.com/user-attachments/assets/f906e843-4a50-4701-aeba-e0541f6314a2](https://github.com/user-attachments/assets/1e388661-19a7-45de-9c5c-53c46572950d)) |
+| ![Slide 1](https://github.com/user-attachments/assets/f906e843-4a50-4701-aeba-e0541f6314a2) |  <img width="1372" alt="스크린샷 2025-04-04 18 06 07" src="https://github.com/user-attachments/assets/05c81cdb-d5bb-493d-af9b-72d9c55e4dcd" /> |
 
 
 ## 🙃 Developers
