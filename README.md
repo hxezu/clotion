@@ -1,5 +1,6 @@
 # 🗒️ 노션 클로닝 프로젝트 : Clotion
 
+![Slide 1](https://github.com/user-attachments/assets/f906e843-4a50-4701-aeba-e0541f6314a2)
 
 
 프로그래머스 데브코스 FE 1차 과제 
