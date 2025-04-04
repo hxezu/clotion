@@ -300,6 +300,7 @@ footer i {
 }
 
 .todoListHeader {
+  margin-top: 20px;
   font-size: 12px;
   font-weight: bold;
   color: #9f9f9d;
@@ -335,6 +336,13 @@ footer i {
 .todoList {
   height: 40vh;
   overflow: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.setUserNamePopup{
+  z-index: 10;
+  left: 10%;
 }
 
 .pageList li,
@@ -348,6 +356,11 @@ footer i {
   color: #7a7669;
   transition: background-color 0.2s ease-in;
 }
+
+.pageList li{
+  display: block;
+}
+
 
 .pageList li:hover,
 .todoList li:hover {
@@ -385,9 +398,29 @@ footer i {
   margin-right: 8px;
   font-size: 1rem;
 }
-.pageList li{
-  display: block;
+
+.pageInfo{
+  position: absolute;
+  top: 8px;
+  left: 30px;
 }
+
+.create{
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
+}
+
+.menuButton{
+  position: absolute;
+  top: 10px;
+  right: 35px;
+}
+
 
 /* Editor Styling */
 .editor {
@@ -567,6 +600,11 @@ footer i {
   color: black;
 }
 
+.pageItem:hover .create {
+  opacity: 1;
+  visibility: visible;
+}
+
 .pageInfo {
   display: flex;
   align-items: center;
@@ -593,4 +631,43 @@ footer i {
 
 .pageItem:first-child .menuButton {
   display: none;
+}
+
+.teamWrapper {
+  color: #7e7e7e;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 12%;
+  right: 5%;
+  width: 8%;
+  border-radius: 15px;
+  border: #eee 2px solid;
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px); 
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: none; 
+  box-shadow: 1px 1px 8px rgba(116, 116, 116, 0.15);
+}
+
+.logoWrapper:hover ~ .teamWrapper {
+  opacity: 1;
+  transform: translateY(0); 
+  pointer-events: auto; 
+}
+
+.teamName{
+  border-bottom: #eee 1px solid;
+}
+
+.member{
+  display: flex;
+  padding: 0.2rem;
+  width: 100%;
+  align-items: baseline
+}
+
+.memIcon {
+
+  margin-right: 10px;
 }

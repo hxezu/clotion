@@ -221,11 +221,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     removeBtn.className = "remove";
     removeBtn.innerText = "remove";
 
-    const createBtn = document.createElement('button');
-    createBtn.className = "create";
-    createBtn.innerText = "create";
+    const createBtn = document.createElement('i');
+    createBtn.className = "create fa-solid fa-plus";
 
-        //이름 변경 버튼 이벤트
+    //이름 변경 버튼 이벤트
     dropdownMenu.querySelector('.rename').addEventListener('click', (e) => {
       currentDocumentId = e.currentTarget.parentElement.parentElement.parentElement.id;
       console.log(currentDocumentId)

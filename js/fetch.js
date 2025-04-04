@@ -5,7 +5,7 @@ async function makeFile() {
     const response = await fetch('https://kdt-api.fe.dev-cos.com/documents', {
       method: 'POST',
       headers: {
-        'x-username': 'test9999',
+        'x-username': 'clotion',
       },
     });
 
@@ -29,7 +29,7 @@ async function makeSubdocument(documentId) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-username': 'test9999',
+        'x-username': 'clotion',
       },
       body: JSON.stringify({ "parent": documentId }) 
     
@@ -54,7 +54,7 @@ async function fetchUserData() {
   try {
     const response = await fetch('https://kdt-api.fe.dev-cos.com/documents', {
       headers: {
-        'x-username': 'test9999',
+        'x-username': 'clotion',
       },
     });
 
@@ -76,7 +76,7 @@ async function fetchUserContent(documentId) {
   try {
     const response = await fetch(`https://kdt-api.fe.dev-cos.com/documents/${documentId}`, {
       headers: {
-        'x-username': 'test9999',
+        'x-username': 'clotion',
       },
     });
 
@@ -101,7 +101,7 @@ async function fetchUserContent(documentId) {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'x-username': 'test9999',
+          'x-username': 'clotion',
         },
         body: JSON.stringify(updatedData),
       });
@@ -119,7 +119,7 @@ async function fetchUserContent(documentId) {
         const response = await fetch(`https://kdt-api.fe.dev-cos.com/documents/${documentId}`, {
           method: 'DELETE',
           headers: {
-            'x-username': 'test9999',
+            'x-username': 'clotion',
           },
         });
       } catch (error) {
@@ -132,7 +132,7 @@ async function fetchUserIdData(documentId) {
   try {
     const response = await fetch(`https://kdt-api.fe.dev-cos.com/documents/${documentId}`, {
       headers: {
-        'x-username': 'test9999',
+        'x-username': 'clotion',
       },
     });
 
