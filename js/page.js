@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
       currentDropBlock.before(currentBlock);
     }
+    saveDocument()
   });
 
   //문서 리스트 렌더링
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetchUserData();
     return response.map((doc) => ({
       id: doc.id,
-      title: doc.title || "(제목 없음)",
+      title: doc.title || "New page",
       documents: doc.documents
     }));
   }
@@ -198,8 +199,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     dropdownMenu.classList.add('contextMenu', 'hidden');
     dropdownMenu.innerHTML = `
         <ul>
-          <li class="rename">이름 변경</li>
-          <li class="delete">삭제</li>
+          <li class="rename"><i class="fa-solid fa-pen-to-square"></i>이름 변경</li>
+          <li class="delete"><i class="fa-regular fa-trash-can"></i>삭제</li>
         </ul>
       `;
 

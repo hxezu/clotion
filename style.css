@@ -334,8 +334,10 @@ footer i {
 
 .pageList,
 .todoList {
+  font-size: 0.8rem;
   height: 40vh;
   overflow: scroll;
+  padding-top: 10px;
   padding-bottom: 50px;
   box-sizing: border-box;
 }
@@ -348,7 +350,7 @@ footer i {
 .pageList li,
 .todoList li {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   position: relative;
   padding: 2px;
   cursor: pointer;
@@ -359,6 +361,10 @@ footer i {
 
 .pageList li{
   display: block;
+}
+
+.todo-text{
+  padding-top: 0.1rem;
 }
 
 
@@ -410,14 +416,14 @@ footer i {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  top: 10px;
-  right: 0;
+  top: 8px;
+  right: 2px;
   transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
 }
 
 .menuButton{
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 35px;
 }
 
@@ -554,13 +560,14 @@ footer i {
   position: absolute;
   top: 100%;
   right: 0;
-  width: 150px;
+  width: 100px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: 0.2px solid #ccc;
   z-index: 10;
   padding: 0.5rem;
+  font-size: 0.7rem;
 }
 
 .contextMenu ul {
@@ -570,9 +577,12 @@ footer i {
 .contextMenu ul li {
   cursor: pointer;
   padding: 8px 10px;
-  font-size: 0.9rem;
   border-radius: 5px;
   color: rgb(98, 98, 98);
+}
+
+.contextMenu ul li i{
+  font-size: 0.7rem;
 }
 
 .contextMenu ul li:hover {
@@ -597,7 +607,6 @@ footer i {
 
 .pageItem:hover {
   background-color: #cbcbcb;
-  color: black;
 }
 
 .pageItem:hover .create {
@@ -629,9 +638,6 @@ footer i {
   opacity: 1;
 }
 
-.pageItem:first-child .menuButton {
-  display: none;
-}
 
 .teamWrapper {
   color: #7e7e7e;
