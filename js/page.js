@@ -3,12 +3,20 @@ import { makeFile, fetchUserData, updateDocument, fetchUserContent, deleteDocume
 document.addEventListener('DOMContentLoaded', async () => {
   const addPageBtn = document.getElementById('addPageBtn');
   const pageList = document.querySelector('.pageList');
- // const pageContentElement = document.querySelector('#editor');
   const pageTitleElement = document.querySelector('.pageTitle');
   const contentContainer = document.getElementById('contentContainer');
   const blockList = document.querySelector('#contentContainer');
   const createdTimeEl = document.querySelector('#created-time'); 
   const editedTimeEl = document.querySelector('#edited-time'); 
+
+  const formatter = new Intl.DateTimeFormat('en-US',{
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  })
 
   let currentDocumentId = null;
   let currentBlockIdx = null;
@@ -167,7 +175,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       currentDocumentId = id;
       const content = await fetchUserContent(id);
       const timeData = await fetchUserIdData(id)
-      openPage(title, id, content, timeData.createdAt,  timeData.updatedAt);
+      const createdTime = new Date(timeData.createdAt)
+      const updatedTime = new Date(timeData.updatedAt)
+      openPage(title, id, content, formatter.format(createdTime), formatter.format(updatedTime));
     });
 
     return newPage;
@@ -316,7 +326,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           const title = (currentTitle && currentTitle.title) ? currentTitle.title.trim() : "New Page";
           console.log(currentTitle.title)
           const content = await fetchUserContent(newId);
-          openPage(title , newId, content);
+          openPage(title , newId, content, formatter.format(createdTime), formatter.format(updatedTime) );
         });
       }
     });
@@ -353,8 +363,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     pageTitleElement.innerText = pageTitle;
     pageTitleElement.dataset.pageId = pageId;
-    createdTimeEl.innerHTML = createdTime;
-    editedTimeEl.innerHTML = updatedTime;
+    createdTimeEl.innerHTML = createdTime.replace('at', '');
+    editedTimeEl.innerHTML = updatedTime.replace('at', '');
     contentContainer.innerHTML = '';
    // pageContentElement.innerText = pageContent || "내용을 입력하세요...";
     //pageTitleElement.focus()
@@ -423,3 +433,4 @@ const setCursorToEnd = (element) => {
   selection.removeAllRanges();
   selection.addRange(range);
 };
+
