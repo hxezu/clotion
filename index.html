@@ -44,6 +44,16 @@
       <main class="editor">
         <i class="fa-solid fa-bars" id="showSidebarBtn"></i>
         <h1 class="pageTitle" contenteditable="true">New page</h1>
+        <div class="time-container">
+          <div class="time-wrapper">
+            <div class="time-wrap-left"><i class="fa-regular fa-clock"></i>Created time</div>
+            <span class="time" id="created-time"></span>
+          </div>
+          <div class="time-wrapper">
+            <div class="time-wrap-left"><i class="fa-regular fa-clock"></i>Last edited time</div>
+            <span class="time" id="edited-time"></span>
+          </div>
+        </div>
         <div id="contentContainer">
           <div contenteditable="true"  id="editor"class="contentBlock" placeholder="내용을 입력하세요..."></div>
         </div>

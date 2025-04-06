@@ -1,5 +1,19 @@
 {
   "todos": [
-    
+    {
+      "todo": "프로그래머스 코딩테스트",
+      "completed": false,
+      "id": "4165"
+    },
+    {
+      "todo": "강의 복습",
+      "completed": true,
+      "id": "f206"
+    },
+    {
+      "todo": "알고리즘 DFS 공부",
+      "completed": false,
+      "id": "6d46"
+    }
   ]
 }

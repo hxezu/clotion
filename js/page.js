@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const pageTitleElement = document.querySelector('.pageTitle');
   const contentContainer = document.getElementById('contentContainer');
   const blockList = document.querySelector('#contentContainer');
+  const createdTimeEl = document.querySelector('#created-time'); 
+  const editedTimeEl = document.querySelector('#edited-time'); 
 
   let currentDocumentId = null;
   let currentBlockIdx = null;
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const content = await fetchUserContent(newId);
         const currentTitle = await fetchUserIdData(newId)
         const title = (currentTitle && currentTitle.title) ? currentTitle.title.trim() : "New Page";
-        openPage(title , newId, content);
+        openPage(title , newId, content, currentTitle.createdAt, currentTitle.updatedAt);
       });
     }
   });
@@ -164,7 +166,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       e.stopPropagation();
       currentDocumentId = id;
       const content = await fetchUserContent(id);
-      openPage(title, id, content);
+      const timeData = await fetchUserIdData(id)
+      openPage(title, id, content, timeData.createdAt,  timeData.updatedAt);
     });
 
     return newPage;
@@ -342,7 +345,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   //페이지 열기
-  function openPage(pageTitle, pageId, pageContent) {
+  function openPage(pageTitle, pageId, pageContent, createdTime, updatedTime) {
     if (!pageTitleElement) {
       console.error('Error: .editor or .pageTitle not found');
       return;
@@ -350,6 +353,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     pageTitleElement.innerText = pageTitle;
     pageTitleElement.dataset.pageId = pageId;
+    createdTimeEl.innerHTML = createdTime;
+    editedTimeEl.innerHTML = updatedTime;
     contentContainer.innerHTML = '';
    // pageContentElement.innerText = pageContent || "내용을 입력하세요...";
     //pageTitleElement.focus()

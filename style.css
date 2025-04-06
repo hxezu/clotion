@@ -495,12 +495,26 @@ footer i {
   position: relative;
 }
 
-.drag-handle {
-  cursor: grab;
-  padding-right: 8px;
-  font-size: 16px;
-  color: #666;
-  user-select: none;
+.time-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.time-wrapper{
+  display: flex;
+}
+
+.time-wrap-left{
+  width: 200px;
+}
+.time-wrap-left i{
+  margin-right: 10px;
+}
+.time{
+  color:black;
 }
 
 /* Logo Styling */
