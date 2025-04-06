@@ -1,4 +1,5 @@
 # 📝 Clotion: Clone of Notion  
+[기획서 보러가기](https://drive.google.com/file/d/1109bBoJmFtTlzk3KMZgI2Ow0RPqsF65Q/view?usp=sharing)
 
 ## 🚀 소개  
 **Clotion**은 Notion과 유사한 문서 편집기로, 사용자가 페이지를 생성하고, 계층적으로 정리하며, 블록 기반으로 편집할 수 있도록 돕습니다.  
